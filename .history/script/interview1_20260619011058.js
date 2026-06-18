@@ -1,0 +1,27 @@
+ const button =document.getElementById('button-bar');
+    const clickButton = document.getElementById('btn-1')
+        clickButton.addEventListener('click',
+            () => {
+                button.style.backgroundColor = 
+                    "blue";
+            });
+
+
+
+
+             const button2 =document.getElementById('button-bar2');
+    const clickButton2 = document.getElementById('btn-2')
+        clickButton2.addEventListener('click',
+            () => {
+                button2.style.backgroundColor = 
+                    "blue";
+            });
+
+
+                  const button3 =document.getElementById('button-bar2');
+    const clickButton3 = document.getElementById('btn-2')
+        clickButton3.addEventListener('click',
+            () => {
+                button2.style.backgroundColor = 
+                    "blue";
+            });

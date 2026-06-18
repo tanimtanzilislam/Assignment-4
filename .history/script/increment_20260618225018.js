@@ -4,8 +4,5 @@
    function increment(){
     data1=data1+1;
     document.getElementById("counting").innerText=data1;
-    document.getElementById("button-bar").value="Applied"
-
-
-      
+    document.getElementById("button-bar").
    }

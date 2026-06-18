@@ -7,5 +7,5 @@
     document.getElementById("button-bar").value="Applied"
 
 
-      
+    
    }

@@ -6,6 +6,5 @@
     document.getElementById("counting").innerText=data1;
     document.getElementById("button-bar").value="Applied"
 
-
-      
+    
    }
