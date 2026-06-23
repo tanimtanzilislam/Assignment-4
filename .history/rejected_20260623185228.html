@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body  class="px-[245px] py-[60px] bg-base-200">
+
+
+    <div class="">
+     <h2 class="font-bold ">Job Application Tracker</h2>
+    <div class="gap-y-[20px]">
+
+         
+  <div class="flex flex-row gap-[16px]">
+  <div class="basis-3xs">
+    <div class="card card-dash bg-base-100 w-96">
+  <div class="card-body">
+    <p >Total</p>
+    <p class="font-bold ">8</p>
+   
+    <div class="card-actions justify-end">
+      
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="basis-2xs"><div class="card card-dash bg-base-100 w-96">
+  <div class="card-body">
+    <p >Interview</p>
+    <div class="font-bold text-green-500  addValue">0</div>
+   
+    <div class="card-actions justify-end">
+      
+    </div>
+  </div>
+</div>
+
+</div>
+  <div class="basis-xs">
+    <div class="card card-dash bg-base-100 w-96">
+  <div class="card-body">
+    <p >Rejected </p>
+    <p class="font-bold text-red-500">0</p>
+    
+    <div class="card-actions justify-end">
+      
+    </div>
+  </div>
+
+  
+</div>
+</div>
+<div>
+</div>
+</div>
+
+
+<div class=" mt-[60px] flex">
+    <h2 class=" font-bold">Available Jobs</h2>
+    <p class="ml-[870px]">0 Jobs</p>
+</div>
+
+</div>
+
+<div>
+
+    <button class="btn  mt-[24px] text-gray-500  " onclick=" location.href='index.html'"">All</button>
+    <button class="btn  mt-[24px] text-gray-500" onclick=" location.href='interview.html'">Interview</button>
+    <button class="btn  btn-primary mt-[24px] " >Rejected</button>
+</div>
+
+
+
+<div id="rejected-container"></div>
+<div id="empty-state" class="bg-base-100 mt-[16px] h-[400px]">
+
+    <div class="pt-[111px] pl-[505px] " >
+    <img src="/jobs.png" alt="" >
+    
+    
+    </div>
+    <div>
+        <h2 class=" pl-[490px] font-bold">No jobs available</h2>
+        <p class="pl-[420px]">Check back soon for new job opportunities</p>
+    </div>
+</div>
+
+
+</body>
+
+<script>
+
+  const rejectedJobs= JSON.parse(localStorage.getItem("rejectedJobs"))||[];
+
+  const container =document.getElementById('rejected-counter');
+  const emptyState=document.getElementById('empty-state');
+
+  if(rejectedJobs===0){
+    emptyState.style.display="block";
+  }else{
+    emptyState.style.display="none";
+    rejectedJobs.for(function(job){
+
+    })
+  }
+
+
+</script>
+</html>
