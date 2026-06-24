@@ -19,3 +19,17 @@ Ans:I create an element using document.createElement() and insert it using metho
        const p= document.createElement("p");
        p.innerText="Hello World"
        document.body.appendChild(p);
+
+**3. What is Event Bubbling? And how does it work?**
+Ans: Event bubble is a process where an event starts from the target element and propagates upward thriugh its parents element.
+ <div id="parent" >
+   <button id="child">   Click</button>
+ </div>
+
+ example:  document.getElementById("child").addEventListener("click",function(){
+    console.log("button clicked");
+    }
+
+    document.getElementById("parent").addEventListener("click",function(){
+    console.log("div clicked");
+    }
