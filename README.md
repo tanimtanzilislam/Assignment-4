@@ -33,3 +33,22 @@ Ans: Event bubble is a process where an event starts from the target element and
     document.getElementById("parent").addEventListener("click",function(){
     console.log("div clicked");
     }
+
+**4. What is Event Delegation in JavaScript? Why is it useful?**
+Ans: Event delegation is a technique where I attach a single event listener to a parent element and handle events for its child element for bubbling
+
+document.getElementById("list").addEventListener("click",function(event){
+
+if(event.target.tagName==="LI"){
+console.log(event.target.innerText");
+}
+why it is useful:: reduces the numbers of event listener 
+                    Improves performance.
+                    Works for dynamically added elements.
+**5.What is the difference between preventDefault() and stopPropagation()?**
+Ans:preventDefault()
+Prevents the browser's default behavior.
+stopPropagation()
+Stops the event from bubbling to parent elements.
+                    
+
