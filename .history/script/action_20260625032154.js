@@ -105,42 +105,25 @@ function moveToRejected(id){
 
     location.reload();
 }
-function moveToInterview(id){
+function movetoInterview(id){
 
-    let rejectedJobs =
-    JSON.parse(localStorage.getItem("rejectedJobs")) || [];
 
-    const job =
-    rejectedJobs.find(item => item.id === id);
+    let rejectedJobs=JSON.parse(localStorage.getItem("rejectedJobs")) || [];
+    const job= rejectedJobs.find(item=>item.id==id);
+    rejectedJobs=rejectedJobs.filter(item=>item.id!==id);
 
-    rejectedJobs =
-    rejectedJobs.filter(item => item.id !== id);
 
-    localStorage.setItem(
+    localstorage.setItem(
         "rejectedJobs",
         JSON.stringify(rejectedJobs)
     );
 
-    let interviewJobs =
-    JSON.parse(localStorage.getItem("interviewJobs")) || [];
+     interviewJobs.push(jobs);
 
-    interviewJobs.push(job);
-
-    localStorage.setItem(
+     localstorage.setItem(
         "interviewJobs",
         JSON.stringify(interviewJobs)
-    );
+     )
 
-    // counter update
-    localStorage.setItem(
-        "interviewCount",
-        interviewJobs.length
-    );
-
-    localStorage.setItem(
-        "rejectedCount",
-        rejectedJobs.length
-    );
-
-    location.reload();
+     location.reload();
 }

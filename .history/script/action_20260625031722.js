@@ -68,79 +68,45 @@ function markRejected(id){
 
 function moveToRejected(id){
 
-    let interviewJobs =
-    JSON.parse(localStorage.getItem("interviewJobs")) || [];
+    let interviewJobs = JSON.parse(localStorage.getItem("interviewJobs"))|| [];
+    const job = interviewJobs.find(item=>item.id===id);
+    interviewJobs=interviewJobs.filter(item=>item.id!==id);
 
-    const job =
-    interviewJobs.find(item => item.id === id);
-
-    interviewJobs =
-    interviewJobs.filter(item => item.id !== id);
 
     localStorage.setItem(
         "interviewJobs",
         JSON.stringify(interviewJobs)
     );
+  let rejectedJobs = JSON.parse(localStorage.getItem("rejectedJobs"))||[];
+  rejectedJobs.push(job);
+  localStorage.setItem(
+    "rejectedJobs",
+    JSON.stringify(rejectedJobs)
+  );
 
-    let rejectedJobs =
-    JSON.parse(localStorage.getItem("rejectedJobs")) || [];
-
-    rejectedJobs.push(job);
-
-    localStorage.setItem(
-        "rejectedJobs",
-        JSON.stringify(rejectedJobs)
-    );
-
-    // counter update
-    localStorage.setItem(
-        "interviewCount",
-        interviewJobs.length
-    );
-
-    localStorage.setItem(
-        "rejectedCount",
-        rejectedJobs.length
-    );
-
-    location.reload();
+  location.reload();
 }
-function moveToInterview(id){
 
-    let rejectedJobs =
-    JSON.parse(localStorage.getItem("rejectedJobs")) || [];
 
-    const job =
-    rejectedJobs.find(item => item.id === id);
+function movetoInterview(id){
 
-    rejectedJobs =
-    rejectedJobs.filter(item => item.id !== id);
 
-    localStorage.setItem(
+    let rejectedJobs=JSON.parse(localStorage.getItem("rejectedJobs")) || [];
+    const job= rejectedJobs.find(item=>item.id==id);
+    rejectedJobs=rejectedJobs.filter(item=>item.id!==id);
+
+
+    localstorage.setItem(
         "rejectedJobs",
         JSON.stringify(rejectedJobs)
     );
 
-    let interviewJobs =
-    JSON.parse(localStorage.getItem("interviewJobs")) || [];
+     interviewJobs.push(jobs);
 
-    interviewJobs.push(job);
-
-    localStorage.setItem(
+     localstorage.setItem(
         "interviewJobs",
         JSON.stringify(interviewJobs)
-    );
+     )
 
-    // counter update
-    localStorage.setItem(
-        "interviewCount",
-        interviewJobs.length
-    );
-
-    localStorage.setItem(
-        "rejectedCount",
-        rejectedJobs.length
-    );
-
-    location.reload();
+     location.reload();
 }
